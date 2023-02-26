@@ -10,9 +10,9 @@ const session = require("express-session");
 const mongoDbSession = require("connect-mongodb-session")(session);
 const jwt = require("jsonwebtoken")
 const path = require("path")
-
+const Router = require('router')
 const app = express()
-
+const router = Router()
 const PORT = process.env.PORT || 7000//there will be same servers the port hels to in creating server or we can use our server
 const saltRound=10
 app.set('view engine', 'ejs');//setting ejs to file
@@ -52,7 +52,8 @@ app.get('/registration', (req, res) => {
 app.get('/login', (req, res) => {
     res.render("login")
 });
-app.get('/profile', (req, res) => {
+app.get('/profile/:id', (req, res) => {
+
     res.render("profile")
 });
 //creating post request for register page
