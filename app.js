@@ -52,7 +52,7 @@ app.get('/registration', (req, res) => {
 app.get('/login', (req, res) => {
     res.render("login")
 });
-app.get('/profile/:id', (req, res) => {
+app.get('/profile', (req, res) => {
 
     res.render("profile")
 });
